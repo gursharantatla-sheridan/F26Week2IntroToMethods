@@ -53,6 +53,37 @@
             int[] b = { 3, 4, 65, 6, 4, 3, 2 };
             PrintArray(b);
             PrintArray(2, 5, 6, 7, 8, 87, 6, 4, 3, 2, 4, 5, 6, 7);
+
+            Console.WriteLine("\n\n");
+
+
+
+            PersonInfo("John", 32);
+            PersonInfo("John");
+            PersonInfo(name: "John", age: 32);
+            //PersonInfo(32, "John");
+            PersonInfo(age: 32, name: "John");
+
+
+            Test(3);
+        }
+
+
+        static void Test(int x, int y)
+        {
+            Console.WriteLine("int");
+        }
+
+        static void Test(params int[] x)
+        {
+            Console.WriteLine("params");
+        }
+
+
+
+        static void PersonInfo(string name, int age = 18)
+        {
+            // method body
         }
 
 
