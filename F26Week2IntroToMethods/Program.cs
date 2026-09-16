@@ -16,16 +16,38 @@
             Console.WriteLine("c.radius = " + c.radius);
             Console.WriteLine("a[0] = " + a[0]);
 
-            ChangeValues(n, s, c, a);
+            ChangeValues(ref n, s, c, a);
 
             Console.WriteLine("\nAfter changes:");
             Console.WriteLine("n = " + n);
             Console.WriteLine("s = " + s);
             Console.WriteLine("c.radius = " + c.radius);
             Console.WriteLine("a[0] = " + a[0]);
+
+            Console.WriteLine("\n\n");
+
+
+            // output parameter example
+
+            int r = 5;
+            //double circum, area;
+
+            GetCircumAndArea(r, out double circum, out double area);
+
+            Console.WriteLine("Circumference = " + circum.ToString("F"));
+            Console.WriteLine("Area = " + area.ToString("F"));
         }
 
-        static void ChangeValues(int num, string str, Circle cir, int[] arr)
+
+        static void GetCircumAndArea(int r, out double circum, out double area)
+        {
+            circum = 2 * Math.PI * r;
+            area = Math.PI * r * r;
+        }
+
+
+
+        static void ChangeValues(ref int num, string str, Circle cir, int[] arr)
         {
             num = 100;
             str = "bye";
