@@ -16,7 +16,7 @@
             Console.WriteLine("c.radius = " + c.radius);
             Console.WriteLine("a[0] = " + a[0]);
 
-            ChangeValues(ref n, s, c, a);
+            ChangeValues(ref n, s, ref c, a);
 
             Console.WriteLine("\nAfter changes:");
             Console.WriteLine("n = " + n);
@@ -36,6 +36,33 @@
 
             Console.WriteLine("Circumference = " + circum.ToString("F"));
             Console.WriteLine("Area = " + area.ToString("F"));
+
+            Console.WriteLine("\n\n");
+
+
+
+            // parameter array example
+
+            int i = 3, j = 6, k = 9;
+
+            Console.WriteLine("i = " + i + " j = " + j + " k = " + k);
+            Console.WriteLine($"i = {i} j = {j} k = {k}");
+            Console.WriteLine("i = {0} j = {1} k = {2}", i, j, k);
+
+
+            int[] b = { 3, 4, 65, 6, 4, 3, 2 };
+            PrintArray(b);
+            PrintArray(2, 5, 6, 7, 8, 87, 6, 4, 3, 2, 4, 5, 6, 7);
+        }
+
+
+        static void PrintArray(params int[] arr)
+        {
+            Console.WriteLine("\n\nTotal items = " + arr.Length);
+
+            foreach (int i in arr)
+                Console.Write(i + " ");
+            Console.WriteLine();
         }
 
 
@@ -47,12 +74,15 @@
 
 
 
-        static void ChangeValues(ref int num, string str, Circle cir, int[] arr)
+        static void ChangeValues(ref int num, string str, ref Circle cir, int[] arr)
         {
             num = 100;
             str = "bye";
-            cir.radius = 100;
+            //cir.radius = 100;
             arr[0] = 100;
+
+            cir = new Circle();
+            cir.radius = 100;
         }
     }
 
